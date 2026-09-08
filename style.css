@@ -1,5 +1,5 @@
 /* =========================
-   GENERAL PAGE STYLING
+   RESET / GENERAL STYLING
    ========================= */
 
 * {
@@ -13,7 +13,7 @@ body {
 }
 
 body {
-    background-color: #f8c8dc; /* Baby pink */
+    background-color: #f8c8dc; /* Baby pink background */
     font-family: Arial, Helvetica, sans-serif;
     color: #222;
 }
@@ -21,14 +21,15 @@ body {
 
 /* =========================
    MAIN WEBSITE CONTAINER
-   Leaves 10% of screen on
-   each side as background
+   80% width = 10% pink
+   background on each side
    ========================= */
 
 .site-container {
     width: 80%;
     margin: 0 auto;
     min-height: 100vh;
+
     background-color: white;
 
     border-left: 1px solid #222;
@@ -43,8 +44,14 @@ body {
 .site-header {
     display: grid;
     grid-template-columns: 25% 75%;
+
+    width: 100%;
+
     border-bottom: 1px solid #222;
 }
+
+
+/* LEFT SIDE OF HEADER */
 
 .logo-area {
     min-height: 120px;
@@ -53,11 +60,17 @@ body {
     align-items: center;
     justify-content: center;
 
+    padding: 20px;
+
     border-right: 1px solid #222;
 
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
+    text-align: center;
 }
+
+
+/* RIGHT SIDE OF HEADER */
 
 .header-graphic {
     min-height: 120px;
@@ -67,64 +80,110 @@ body {
     justify-content: center;
 
     padding: 20px;
+
     text-align: center;
+    font-size: 1rem;
 }
 
 
 /* =========================
-   TOP NAVIGATION
+   NAVIGATION BAR
    ========================= */
 
 #navigation {
     width: 100%;
 }
 
+
+/* Entire navigation bar */
+
 .main-nav {
     width: 100%;
+
     background-color: white;
 
     border-bottom: 1px solid #222;
 }
 
-.main-nav ul {
-    margin: 0;
-    padding: 0;
 
+/* Navigation list */
+
+.main-nav ul {
     list-style: none;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
 }
+
+
+/* Each navigation item */
 
 .main-nav li {
     flex: 1;
+
+    margin: 0;
+    padding: 0;
+
     text-align: center;
-}
-
-.main-nav a {
-    display: block;
-    padding: 12px 10px;
-
-    text-decoration: none;
-    color: #222;
 
     border-right: 1px solid #222;
-
-    transition: background-color 0.2s ease;
 }
 
-.main-nav li:last-child a {
+
+/* Remove border from last navigation item */
+
+.main-nav li:last-child {
     border-right: none;
 }
 
-.main-nav a:hover {
-    background-color: #f8c8dc;
+
+/* Navigation links */
+
+.main-nav a {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px 10px;
+
+    background-color: white;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
+
+/* LIGHTER baby pink when hovering */
+
+.main-nav a:hover {
+    background-color: #fde1ec;
+}
+
+
+/* Current page */
+
 .main-nav a.active {
-    background-color: #f8c8dc;
     font-weight: bold;
+}
+
+
+/* Current page still gets hover effect */
+
+.main-nav a.active:hover {
+    background-color: #fde1ec;
 }
 
 
@@ -135,8 +194,9 @@ body {
 .content-layout {
     display: grid;
 
-    /* left sidebar / main content / right sidebar */
-    grid-template-columns: 23% 54% 23%;
+    grid-template-columns: 22% 56% 22%;
+
+    width: 100%;
 
     min-height: 600px;
 }
@@ -150,25 +210,36 @@ body {
     padding: 30px 20px;
 
     border-right: 1px solid #222;
+
+    background-color: white;
 }
 
+
+.left-sidebar h2,
 .left-sidebar h3 {
     margin-top: 0;
 }
 
+
 .left-sidebar ul {
     list-style: none;
+
+    margin: 0;
     padding: 0;
 }
+
 
 .left-sidebar li {
     margin-bottom: 15px;
 }
 
+
 .left-sidebar a {
     color: #222;
+
     text-decoration: none;
 }
+
 
 .left-sidebar a:hover {
     text-decoration: underline;
@@ -180,10 +251,39 @@ body {
    ========================= */
 
 .main-content {
-    padding: 25px 30px;
+    padding: 35px 40px;
+
+    background-color: white;
 }
 
+
+.main-content h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 2rem;
+}
+
+
+.main-content h2 {
+    margin-top: 30px;
+}
+
+
+.main-content p {
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   HERO IMAGE
+   ========================= */
+
 .hero-image {
+    display: block;
+
     width: 100%;
     height: 250px;
 
@@ -194,54 +294,100 @@ body {
     border: 1px solid #222;
 }
 
-.main-content h1 {
-    margin-top: 0;
-    font-size: 2rem;
-}
-
-.main-content h2 {
-    margin-top: 30px;
-}
-
-.main-content p {
-    line-height: 1.6;
-}
-
 
 /* =========================
-   RIGHT SIDEBAR
+   RIGHT SIDEBAR / CONNECT
    ========================= */
 
 .right-sidebar {
     padding: 30px 20px;
 
     border-left: 1px solid #222;
+
+    background-color: white;
 }
 
+
+.right-sidebar h2,
 .right-sidebar h3 {
     margin-top: 0;
 }
 
+
+/* Keeps Connect section visible while scrolling */
+
 .sticky-content {
     position: sticky;
+
     top: 20px;
 }
 
+
 .right-sidebar a {
     color: #222;
+
+    text-decoration: none;
+}
+
+
+.right-sidebar a:hover {
+    text-decoration: underline;
 }
 
 
 /* =========================
-   CARDS / CONTENT BLOCKS
+   CONTENT CARDS
+   Optional if you use them
    ========================= */
 
 .content-card {
-    padding: 20px;
     margin: 20px 0;
+    padding: 20px;
+
+    background-color: white;
 
     border: 1px solid #222;
-    background-color: #fff;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.button,
+button {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border: 1px solid #222;
+
+    background-color: white;
+
+    color: #222;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+
+.button:hover,
+button:hover {
+    background-color: #fde1ec;
+}
+
+
+/* =========================
+   IMAGES
+   ========================= */
+
+img {
+    max-width: 100%;
+
+    height: auto;
 }
 
 
@@ -250,66 +396,142 @@ body {
    ========================= */
 
 .site-footer {
-    border-top: 1px solid #222;
+    width: 100%;
 
     padding: 20px 30px;
 
-    text-align: center;
     background-color: white;
+
+    border-top: 1px solid #222;
+
+    text-align: center;
 }
+
 
 .site-footer p {
     margin: 5px 0;
 }
+
 
 .site-footer a {
     color: #222;
 }
 
 
+.site-footer a:hover {
+    text-decoration: none;
+}
+
+
 /* =========================
-   MOBILE / SMALL SCREEN
+   TABLETS / SMALLER SCREENS
    ========================= */
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
 
     .site-container {
         width: 90%;
     }
 
+    .content-layout {
+        grid-template-columns: 20% 60% 20%;
+    }
+
+    .main-content {
+        padding: 30px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 750px) {
+
+    body {
+        background-color: #f8c8dc;
+    }
+
+
+    .site-container {
+        width: 94%;
+    }
+
+
+    /* Header stacks vertically */
+
     .site-header {
         grid-template-columns: 1fr;
     }
 
+
     .logo-area {
+        min-height: 90px;
+
         border-right: none;
         border-bottom: 1px solid #222;
+
+        font-size: 1.8rem;
     }
+
+
+    .header-graphic {
+        min-height: 80px;
+    }
+
+
+    /* Navigation stacks */
 
     .main-nav ul {
         flex-direction: column;
     }
 
+
     .main-nav li {
         width: 100%;
+
+        border-right: none;
+        border-bottom: 1px solid #222;
     }
 
-    .main-nav a {
-        border-right: none;
-        border-bottom: 1px solid #ddd;
+
+    .main-nav li:last-child {
+        border-bottom: none;
     }
+
+
+    /* Main page becomes one column */
 
     .content-layout {
         grid-template-columns: 1fr;
     }
 
-    .left-sidebar,
-    .right-sidebar {
-        border: none;
+
+    .left-sidebar {
+        border-right: none;
         border-bottom: 1px solid #222;
     }
+
 
     .main-content {
         padding: 25px 20px;
     }
+
+
+    .right-sidebar {
+        border-left: none;
+        border-top: 1px solid #222;
+    }
+
+
+    .sticky-content {
+        position: static;
+    }
+
+
+    .hero-image {
+        height: 200px;
+    }
+
 }
