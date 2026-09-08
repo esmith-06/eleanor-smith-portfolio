@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const navigation = document.getElementById("navigation");
 
+    if (!navigation) return;
+
     navigation.innerHTML = `
         <nav class="main-nav">
             <ul>
@@ -14,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </nav>
     `;
 
-    // Highlight the current page
     const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
 
