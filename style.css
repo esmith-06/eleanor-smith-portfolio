@@ -1,0 +1,315 @@
+/* =========================
+   GENERAL PAGE STYLING
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f8c8dc; /* Baby pink */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+}
+
+
+/* =========================
+   MAIN WEBSITE CONTAINER
+   Leaves 10% of screen on
+   each side as background
+   ========================= */
+
+.site-container {
+    width: 80%;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: white;
+
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.site-header {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    border-bottom: 1px solid #222;
+}
+
+.logo-area {
+    min-height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-right: 1px solid #222;
+
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header-graphic {
+    min-height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* =========================
+   TOP NAVIGATION
+   ========================= */
+
+#navigation {
+    width: 100%;
+}
+
+.main-nav {
+    width: 100%;
+    background-color: white;
+
+    border-bottom: 1px solid #222;
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav li {
+    flex: 1;
+    text-align: center;
+}
+
+.main-nav a {
+    display: block;
+    padding: 12px 10px;
+
+    text-decoration: none;
+    color: #222;
+
+    border-right: 1px solid #222;
+
+    transition: background-color 0.2s ease;
+}
+
+.main-nav li:last-child a {
+    border-right: none;
+}
+
+.main-nav a:hover {
+    background-color: #f8c8dc;
+}
+
+.main-nav a.active {
+    background-color: #f8c8dc;
+    font-weight: bold;
+}
+
+
+/* =========================
+   MAIN CONTENT LAYOUT
+   ========================= */
+
+.content-layout {
+    display: grid;
+
+    /* left sidebar / main content / right sidebar */
+    grid-template-columns: 23% 54% 23%;
+
+    min-height: 600px;
+}
+
+
+/* =========================
+   LEFT SIDEBAR
+   ========================= */
+
+.left-sidebar {
+    padding: 30px 20px;
+
+    border-right: 1px solid #222;
+}
+
+.left-sidebar h3 {
+    margin-top: 0;
+}
+
+.left-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-sidebar li {
+    margin-bottom: 15px;
+}
+
+.left-sidebar a {
+    color: #222;
+    text-decoration: none;
+}
+
+.left-sidebar a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MAIN CONTENT AREA
+   ========================= */
+
+.main-content {
+    padding: 25px 30px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 250px;
+
+    margin-bottom: 30px;
+
+    object-fit: cover;
+
+    border: 1px solid #222;
+}
+
+.main-content h1 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.main-content h2 {
+    margin-top: 30px;
+}
+
+.main-content p {
+    line-height: 1.6;
+}
+
+
+/* =========================
+   RIGHT SIDEBAR
+   ========================= */
+
+.right-sidebar {
+    padding: 30px 20px;
+
+    border-left: 1px solid #222;
+}
+
+.right-sidebar h3 {
+    margin-top: 0;
+}
+
+.sticky-content {
+    position: sticky;
+    top: 20px;
+}
+
+.right-sidebar a {
+    color: #222;
+}
+
+
+/* =========================
+   CARDS / CONTENT BLOCKS
+   ========================= */
+
+.content-card {
+    padding: 20px;
+    margin: 20px 0;
+
+    border: 1px solid #222;
+    background-color: #fff;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+    border-top: 1px solid #222;
+
+    padding: 20px 30px;
+
+    text-align: center;
+    background-color: white;
+}
+
+.site-footer p {
+    margin: 5px 0;
+}
+
+.site-footer a {
+    color: #222;
+}
+
+
+/* =========================
+   MOBILE / SMALL SCREEN
+   ========================= */
+
+@media screen and (max-width: 850px) {
+
+    .site-container {
+        width: 90%;
+    }
+
+    .site-header {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-area {
+        border-right: none;
+        border-bottom: 1px solid #222;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+    }
+
+    .main-nav li {
+        width: 100%;
+    }
+
+    .main-nav a {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .content-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .left-sidebar,
+    .right-sidebar {
+        border: none;
+        border-bottom: 1px solid #222;
+    }
+
+    .main-content {
+        padding: 25px 20px;
+    }
+}
