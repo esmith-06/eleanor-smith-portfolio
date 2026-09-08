@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
 
-    /* Highlight the current page */
-
     const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
 
