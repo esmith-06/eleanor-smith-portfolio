@@ -1,172 +1,674 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eleanor Smith | About Me</title>
-    <meta name="description" content="Eleanor Smith is a marketing student at Iowa State University with a background in social media, branding, and entrepreneurship.">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="site-container">
-        <!-- HEADER -->
-        <header class="site-header">
-            <!-- LOGO -->
-            <div class="logo-area">
-                <img
-                    src="logo.png"
-                    alt="Eleanor Smith Logo"
-                    class="logo-image"
-                >
-            </div>
-            <div class="header-graphic">
-                Marketing • Creativity • Entrepreneurship
-            </div>
-        </header>
-        <!-- NAVIGATION -->
-        <div id="navigation"></div>
-        <!-- MAIN CONTENT -->
-        <div class="content-layout">
-            <!-- LEFT SIDEBAR -->
-            <aside class="left-sidebar">
-                <h3>Explore</h3>
-                <ul>
-                    <li>
-                        <a href="internships.html">
-                            Internships
-                        </a>
-                    </li>
-                    <li>
-                        <a href="entrepreneurship.html">
-                            Entrepreneurship
-                        </a>
-                    </li>
-                    <li>
-                        <a href="iowa-state.html">
-                            Iowa State
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <!-- MAIN CONTENT AREA -->
-            <main class="main-content">
-                <!-- Replace with your own photo: images/hero.jpg -->
-                <img
-                    src="images/hero.jpg"
-                    alt="Eleanor Smith"
-                    class="hero-image"
-                >
-                <h1>Hi, I'm Eleanor Smith.</h1>
+/* =========================
+   FONT IMPORT (Poppins, via Google Fonts)
+   ========================= */
 
-                <p>
-                    I'm a junior at Iowa State University's Ivy College of
-                    Business, where I'm pursuing a Bachelor of Science in
-                    <span class="keyword">marketing</span> with a minor in
-                    advertising. Marketing has been the thread running
-                    through nearly everything I've done, from running my
-                    own small bakery business as a middle schooler to
-                    interning with companies that are building out their
-                    marketing and <span class="keyword">branding</span>
-                    programs for the first time.
-                </p>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-                <p>
-                    My interest in marketing started early. At twelve, I
-                    taught myself how to bake and decorate custom cakes
-                    and cupcakes, then built a small local business,
-                    Sweet E's Bakery, around it. Running that business
-                    for six years taught me branding basics long before
-                    I had a name for any of it: how to promote a small
-                    brand on social media, how to keep customers coming
-                    back, and how to balance
-                    <span class="keyword">creativity</span> with the
-                    practical side of running a company. That
-                    <span class="keyword">entrepreneurship</span>
-                    experience still shapes how I think about marketing
-                    today, and it's a big part of why I'm drawn to this
-                    field in the first place.
-                </p>
 
-                <p>
-                    Since coming to Iowa State, I've turned that early
-                    instinct into real, professional skills. As a Social
-                    Media Intern with empirical Foods, I create
-                    <span class="keyword">content</span>, including
-                    reels, graphics, and posts, for multiple brands,
-                    tailoring each piece to a different audience and
-                    managing content calendars across platforms. That
-                    work has averaged a 28% engagement rate, teaching me
-                    a lot about what actually makes an audience pay
-                    attention. As a Marketing Intern with Able Aerospace,
-                    I built the company's first customer email program
-                    using segmented HubSpot workflows and supported their
-                    branding and signage needs across the facility, a
-                    reminder that good marketing shows up in plenty of
-                    places beyond social media alone.
-                </p>
+/* =========================
+   GENERAL PAGE STYLING
+   ========================= */
 
-                <p>
-                    On campus, I bring that same energy to my
-                    involvement. As Marketing Director for AfterDark, I
-                    manage our social media platforms and oversee event
-                    promotion, using tools like Canva and CapCut to
-                    produce marketing content and video. I also spent a
-                    year on the Creative Committee for Dance Marathon,
-                    designing social media content that helped our team
-                    contribute to a campus-wide fundraising total of
-                    over $145,000 for a children's hospital.
-                </p>
+* {
+    box-sizing: border-box;
+}
 
-                <p>
-                    I'm drawn to the parts of marketing where creativity,
-                    branding, and content strategy meet, where a good
-                    idea also has to perform and hold up under real
-                    results. Take a look through the tabs above for more
-                    on my internships, my entrepreneurship background,
-                    my time at Iowa State, and where I hope my career
-                    goes from here.
-                </p>
-            </main>
-            <!-- RIGHT SIDEBAR -->
-            <aside class="right-sidebar">
-                <div class="sticky-content">
-                    <h3>Connect</h3>
-                    <ul class="connect-list">
-                        <li>
-                            <a href="https://www.linkedin.com/in/eleanorsmith06" target="_blank" rel="noopener">
-                                LinkedIn: linkedin.com/in/eleanorsmith06
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:esmith06@iastate.edu">
-                                Email: esmith06@iastate.edu
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-        <!-- FOOTER -->
-        <footer class="site-footer">
-            <div class="footer-row">
-                <div class="footer-links">
-                    <a href="index.html">About Me</a>
-                    <a href="internships.html">Internships</a>
-                    <a href="entrepreneurship.html">Entrepreneurship</a>
-                    <a href="iowa-state.html">Iowa State</a>
-                    <a href="future.html">Future</a>
-                    <a href="privacy.html">Privacy Statement</a>
-                </div>
-                <div class="footer-contact">
-                    Site questions:
-                    <a href="mailto:esmith06@iastate.edu">esmith06@iastate.edu</a>
-                </div>
-            </div>
-            <p class="footer-copyright">
-                &copy; <span class="js-year"></span> Eleanor Smith. All rights reserved.
-            </p>
-        </footer>
-    </div>
-    <script src="navigation.js"></script>
-</body>
-</html>
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f8c8dc;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: #222;
+}
+
+
+/* =========================
+   MAIN WEBSITE CONTAINER
+   Leaves 10% of screen on
+   each side as background
+   ========================= */
+
+.site-container {
+    width: 80%;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    background-color: white;
+
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.site-header {
+    display: grid;
+    grid-template-columns: 25% 75%;
+
+    width: 100%;
+
+    border-bottom: 1px solid #222;
+
+    background-color: white;
+}
+
+
+/* =========================
+   LOGO AREA
+   ========================= */
+
+.logo-area {
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 15px;
+
+    border-right: 1px solid #222;
+
+    background-color: white;
+
+    overflow: hidden;
+}
+
+
+/* Logo image */
+
+.logo-image {
+    display: block;
+
+    width: 100%;
+    max-width: 260px;
+
+    height: 105px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   HEADER GRAPHIC / TAGLINE
+   ========================= */
+
+.header-graphic {
+    min-height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   NAVIGATION BAR
+   ========================= */
+
+#navigation {
+    width: 100%;
+}
+
+
+.main-nav {
+    width: 100%;
+
+    background-color: white;
+
+    border-bottom: 1px solid #222;
+}
+
+
+.main-nav ul {
+    list-style: none;
+
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.main-nav li {
+    flex: 1;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    border-right: 1px solid #222;
+}
+
+
+.main-nav li:last-child {
+    border-right: none;
+}
+
+
+.main-nav a {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px 10px;
+    border-bottom: 3px solid transparent;
+
+    background-color: white;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-bottom-color 0.2s ease;
+}
+
+
+/* Lighter baby pink when hovering */
+
+.main-nav a:hover {
+    background-color: #fde1ec;
+}
+
+
+/* Current page (accented with light orange) */
+
+.main-nav a.active {
+    font-weight: bold;
+
+    background-color: #fff1e0;
+
+    border-bottom-color: #f4a94c;
+}
+
+
+.main-nav a.active:hover {
+    background-color: #fde1ec;
+}
+
+
+/* =========================
+   MAIN CONTENT LAYOUT
+   ========================= */
+
+.content-layout {
+    display: grid;
+
+    grid-template-columns: 22% 56% 22%;
+
+    width: 100%;
+
+    min-height: 600px;
+
+    background-color: white;
+}
+
+
+/* =========================
+   LEFT SIDEBAR
+   ========================= */
+
+.left-sidebar {
+    min-width: 0;
+
+    padding: 30px 20px;
+
+    border-right: 1px solid #222;
+
+    background-color: white;
+}
+
+
+.left-sidebar h2,
+.left-sidebar h3 {
+    margin-top: 0;
+
+    color: #d97b29;
+}
+
+
+.left-sidebar ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.left-sidebar li {
+    margin-bottom: 15px;
+}
+
+
+.left-sidebar a {
+    color: #222;
+
+    text-decoration: none;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+
+.left-sidebar a:hover {
+    color: #d97b29;
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MAIN CONTENT AREA
+   ========================= */
+
+.main-content {
+    min-width: 0;
+
+    padding: 35px 40px;
+
+    background-color: white;
+}
+
+
+.main-content h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    padding-left: 14px;
+
+    border-left: 4px solid #f4a94c;
+
+    font-size: 34px;
+}
+
+
+.main-content h2 {
+    margin-top: 30px;
+
+    color: #b85c00;
+}
+
+
+.main-content p {
+    margin-bottom: 18px;
+
+    line-height: 1.6;
+
+    font-size: 16px;
+}
+
+
+/* Inline emphasis for keyword terms (marketing, branding, etc.) */
+
+.keyword {
+    color: #b85c00;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   HERO IMAGE
+   ========================= */
+
+.hero-image {
+    display: block;
+
+    width: 100%;
+    height: 250px;
+
+    margin-bottom: 30px;
+
+    object-fit: cover;
+
+    border: 1px solid #222;
+}
+
+
+/* =========================
+   RIGHT SIDEBAR
+   ========================= */
+
+.right-sidebar {
+    min-width: 0;
+
+    padding: 30px 20px;
+
+    border-left: 1px solid #222;
+
+    background-color: white;
+}
+
+
+.right-sidebar h2,
+.right-sidebar h3 {
+    margin-top: 0;
+
+    color: #d97b29;
+}
+
+
+.sticky-content {
+    position: sticky;
+
+    top: 20px;
+}
+
+
+.right-sidebar a {
+    color: #222;
+
+    text-decoration: none;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+
+.right-sidebar a:hover {
+    color: #d97b29;
+
+    text-decoration: underline;
+}
+
+
+/* Connect links laid out as a stacked list */
+
+.connect-list {
+    list-style: none;
+
+    margin: 15px 0 0;
+    padding: 0;
+}
+
+
+.connect-list li {
+    margin-bottom: 12px;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+
+/* =========================
+   CONTENT CARDS
+   ========================= */
+
+.content-card {
+    margin: 20px 0;
+    padding: 20px;
+
+    background-color: white;
+
+    border: 1px solid #222;
+}
+
+
+/* =========================
+   BUTTONS
+   Light orange on hover so
+   buttons read differently
+   than nav/link hover states
+   ========================= */
+
+.button,
+button {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border: 1px solid #222;
+
+    background-color: white;
+
+    color: #222;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+
+.button:hover,
+button:hover {
+    background-color: #ffe3c2;
+}
+
+
+/* =========================
+   GENERAL IMAGES
+   ========================= */
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+    width: 100%;
+
+    padding: 20px 30px;
+
+    background-color: white;
+
+    border-top: 1px solid #222;
+
+    text-align: center;
+}
+
+
+.site-footer p {
+    margin: 5px 0;
+}
+
+
+.site-footer a {
+    color: #222;
+}
+
+
+.site-footer a:hover {
+    color: #d97b29;
+}
+
+
+/* Footer split into a links row and a contact row */
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    max-width: 900px;
+    margin: 0 auto 8px;
+
+    text-align: left;
+}
+
+
+.footer-links a {
+    margin-right: 14px;
+
+    text-decoration: none;
+}
+
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-contact {
+    text-align: right;
+}
+
+
+.footer-copyright {
+    font-size: 14px;
+
+    color: #555;
+}
+
+
+/* =========================
+   TABLETS
+   ========================= */
+
+@media screen and (max-width: 1000px) {
+
+    .site-container {
+        width: 90%;
+    }
+
+
+    .content-layout {
+        grid-template-columns: 20% 60% 20%;
+    }
+
+
+    .main-content {
+        padding: 30px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 750px) {
+
+    body {
+        background-color: #f8c8dc;
+    }
+
+
+    .site-container {
+        width: 94%;
+    }
+
+
+    .site-header {
+        grid-template-columns: 1fr;
+    }
+
+
+    .logo-area {
+        height: 120px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #222;
+    }
+
+
+    .logo-image {
+        max-width: 250px;
+
+        height: 100px;
+    }
+
+
+    .header-graphic {
+        min-height: 80px;
+    }
+
+
+    .main-nav ul {
+        flex-direction: column;
+    }
+
+
+    .main-nav li {
+        width: 100%;
+
+        border-right: none;
+
+        border-bottom: 1px solid #222;
+    }
+
+
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
+
+
+    .content-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .left-sidebar {
+        border-right: none;
+
+        border-bottom: 1px solid #222;
+    }
+
+
+    .main-content {
+        padding: 25px 20px;
+    }
+
+
+    .right-sidebar {
+        border-left: none;
+
+        border-top: 1px solid #222;
+    }
+
+
+    .sticky-content {
+        position: static;
+    }
+
+
+    .hero-image {
+        height: 200px;
+    }
+
+
+    .footer-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .footer-contact {
+        text-align: left;
+    }
+
+}
