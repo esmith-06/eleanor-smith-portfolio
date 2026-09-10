@@ -1,4 +1,11 @@
 /* =========================
+   FONT IMPORT (Poppins, via Google Fonts)
+   ========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* =========================
    GENERAL PAGE STYLING
    ========================= */
 
@@ -14,7 +21,7 @@ body {
 
 body {
     background-color: #f8c8dc;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     color: #222;
 }
 
@@ -161,6 +168,7 @@ body {
     width: 100%;
 
     padding: 15px 10px;
+    border-bottom: 3px solid transparent;
 
     background-color: white;
 
@@ -173,7 +181,8 @@ body {
 
     transition:
         background-color 0.2s ease,
-        color 0.2s ease;
+        color 0.2s ease,
+        border-bottom-color 0.2s ease;
 }
 
 
@@ -184,10 +193,14 @@ body {
 }
 
 
-/* Current page */
+/* Current page (accented with light orange) */
 
 .main-nav a.active {
     font-weight: bold;
+
+    background-color: #fff1e0;
+
+    border-bottom-color: #f4a94c;
 }
 
 
@@ -218,6 +231,8 @@ body {
    ========================= */
 
 .left-sidebar {
+    min-width: 0;
+
     padding: 30px 20px;
 
     border-right: 1px solid #222;
@@ -229,6 +244,8 @@ body {
 .left-sidebar h2,
 .left-sidebar h3 {
     margin-top: 0;
+
+    color: #d97b29;
 }
 
 
@@ -249,10 +266,15 @@ body {
     color: #222;
 
     text-decoration: none;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 
 .left-sidebar a:hover {
+    color: #d97b29;
+
     text-decoration: underline;
 }
 
@@ -262,6 +284,8 @@ body {
    ========================= */
 
 .main-content {
+    min-width: 0;
+
     padding: 35px 40px;
 
     background-color: white;
@@ -272,12 +296,18 @@ body {
     margin-top: 0;
     margin-bottom: 20px;
 
+    padding-left: 14px;
+
+    border-left: 4px solid #f4a94c;
+
     font-size: 34px;
 }
 
 
 .main-content h2 {
     margin-top: 30px;
+
+    color: #b85c00;
 }
 
 
@@ -287,6 +317,15 @@ body {
     line-height: 1.6;
 
     font-size: 16px;
+}
+
+
+/* Inline emphasis for keyword terms (marketing, branding, etc.) */
+
+.keyword {
+    color: #b85c00;
+
+    font-weight: 600;
 }
 
 
@@ -313,6 +352,8 @@ body {
    ========================= */
 
 .right-sidebar {
+    min-width: 0;
+
     padding: 30px 20px;
 
     border-left: 1px solid #222;
@@ -324,6 +365,8 @@ body {
 .right-sidebar h2,
 .right-sidebar h3 {
     margin-top: 0;
+
+    color: #d97b29;
 }
 
 
@@ -338,11 +381,34 @@ body {
     color: #222;
 
     text-decoration: none;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 
 .right-sidebar a:hover {
+    color: #d97b29;
+
     text-decoration: underline;
+}
+
+
+/* Connect links laid out as a stacked list */
+
+.connect-list {
+    list-style: none;
+
+    margin: 15px 0 0;
+    padding: 0;
+}
+
+
+.connect-list li {
+    margin-bottom: 12px;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 
@@ -362,6 +428,9 @@ body {
 
 /* =========================
    BUTTONS
+   Light orange on hover so
+   buttons read differently
+   than nav/link hover states
    ========================= */
 
 .button,
@@ -386,7 +455,7 @@ button {
 
 .button:hover,
 button:hover {
-    background-color: #fde1ec;
+    background-color: #ffe3c2;
 }
 
 
@@ -423,6 +492,53 @@ img {
 
 .site-footer a {
     color: #222;
+}
+
+
+.site-footer a:hover {
+    color: #d97b29;
+}
+
+
+/* Footer split into a links row and a contact row */
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    max-width: 900px;
+    margin: 0 auto 8px;
+
+    text-align: left;
+}
+
+
+.footer-links a {
+    margin-right: 14px;
+
+    text-decoration: none;
+}
+
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-contact {
+    text-align: right;
+}
+
+
+.footer-copyright {
+    font-size: 14px;
+
+    color: #555;
 }
 
 
@@ -541,6 +657,18 @@ img {
 
     .hero-image {
         height: 200px;
+    }
+
+
+    .footer-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .footer-contact {
+        text-align: left;
     }
 
 }
