@@ -6,6 +6,21 @@
 
 
 /* =========================
+   SHARED LAYOUT WIDTH
+   Both the header (logo box)
+   and the content layout
+   (left sidebar) use this
+   same value, so their
+   dividing lines always
+   line up vertically.
+   ========================= */
+
+:root {
+    --sidebar-width: 22%;
+}
+
+
+/* =========================
    GENERAL PAGE STYLING
    ========================= */
 
@@ -50,7 +65,7 @@ body {
 
 .site-header {
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: var(--sidebar-width) 1fr;
 
     width: 100%;
 
@@ -216,7 +231,7 @@ body {
 .content-layout {
     display: grid;
 
-    grid-template-columns: 22% 56% 22%;
+    grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width);
 
     width: 100%;
 
@@ -548,13 +563,13 @@ img {
 
 @media screen and (max-width: 1000px) {
 
-    .site-container {
-        width: 90%;
+    :root {
+        --sidebar-width: 20%;
     }
 
 
-    .content-layout {
-        grid-template-columns: 20% 60% 20%;
+    .site-container {
+        width: 90%;
     }
 
 
