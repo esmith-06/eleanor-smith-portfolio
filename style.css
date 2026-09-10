@@ -7,16 +7,21 @@
 
 /* =========================
    SHARED LAYOUT WIDTH
-   Both the header (logo box)
-   and the content layout
-   (left sidebar) use this
-   same value, so their
-   dividing lines always
-   line up vertically.
+   The header (logo box), the
+   content layout (left
+   sidebar), and the primary
+   nav bar all line up their
+   vertical dividers using
+   this same value. The nav
+   bar has 5 equal tabs
+   (100% / 5 = 20% each), so
+   this is set to 20% to match
+   the line after the first
+   tab ("About Me").
    ========================= */
 
 :root {
-    --sidebar-width: 22%;
+    --sidebar-width: 20%;
 }
 
 
@@ -562,11 +567,6 @@ img {
    ========================= */
 
 @media screen and (max-width: 1000px) {
-
-    :root {
-        --sidebar-width: 20%;
-    }
-
 
     .site-container {
         width: 90%;
