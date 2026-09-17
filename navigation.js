@@ -46,6 +46,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Keep the LinkedIn destination while displaying only the clean title.
+    const linkedInLinks = document.querySelectorAll(
+        '.right-sidebar a[href*="linkedin.com"]'
+    );
+    linkedInLinks.forEach(function (link) {
+        link.textContent = "LinkedIn";
+    });
+
     // Keep any footer/page date stamps current automatically.
     // Add class="js-year" to a <span> anywhere on the page to use this.
     const yearSpans = document.querySelectorAll(".js-year");
