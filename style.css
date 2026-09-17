@@ -1,689 +1,132 @@
-/* =========================
-   FONT IMPORT (Poppins, via Google Fonts)
-   ========================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-
-/* =========================
-   SHARED LAYOUT WIDTH
-   The header (logo box), the
-   content layout (left
-   sidebar), and the primary
-   nav bar all line up their
-   vertical dividers using
-   this same value. The nav
-   bar has 5 equal tabs
-   (100% / 5 = 20% each), so
-   this is set to 20% to match
-   the line after the first
-   tab ("About Me").
-   ========================= */
 
 :root {
     --sidebar-width: 20%;
+    --pink: #f8c8dc;
+    --pink-dark: #c95f8d;
+    --pink-light: #fde1ec;
+    --pink-border: #e8a4c1;
 }
 
-
-/* =========================
-   GENERAL PAGE STYLING
-   ========================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html,
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 body {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: #f8c8dc;
+    background-color: var(--pink);
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     color: #222;
 }
-
-
-/* =========================
-   MAIN WEBSITE CONTAINER
-   Leaves 10% of screen on
-   each side as background
-   ========================= */
 
 .site-container {
     width: 80%;
     margin: 0 auto;
     min-height: 100vh;
-
     background-color: white;
-
-    border-left: 1px solid #222;
-    border-right: 1px solid #222;
+    /* The pink page background now fades into the site with a soft edge shadow. */
+    border-left: 0;
+    border-right: 0;
+    box-shadow: 0 0 18px rgba(104, 38, 68, 0.28);
 }
-
-
-/* =========================
-   HEADER
-   ========================= */
 
 .site-header {
     display: grid;
     grid-template-columns: var(--sidebar-width) 1fr;
-
     width: 100%;
-
-    border-bottom: 1px solid #222;
-
+    border-bottom: 1px solid var(--pink-border);
     background-color: white;
 }
-
-
-/* =========================
-   LOGO AREA
-   ========================= */
-
 .logo-area {
     height: 120px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 8px 15px;
-
-    border-right: 1px solid #222;
-
+    border-right: 1px solid var(--pink-border);
     background-color: white;
-
     overflow: hidden;
 }
-
-
-/* Logo image */
-
-.logo-image {
-    display: block;
-
-    width: 100%;
-    max-width: 260px;
-
-    height: 105px;
-
-    object-fit: contain;
-}
-
-
-/* =========================
-   HEADER GRAPHIC / TAGLINE
-   ========================= */
-
+.logo-image { display: block; width: 100%; max-width: 260px; height: 105px; object-fit: contain; }
 .header-graphic {
     min-height: 120px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 20px;
-
     text-align: center;
-
     font-size: 18px;
+    color: var(--pink-dark);
 }
 
-
-/* =========================
-   NAVIGATION BAR
-   ========================= */
-
-#navigation {
-    width: 100%;
-}
-
-
-.main-nav {
-    width: 100%;
-
-    background-color: white;
-
-    border-bottom: 1px solid #222;
-}
-
-
-.main-nav ul {
-    list-style: none;
-
-    display: flex;
-    align-items: stretch;
-
-    width: 100%;
-
-    margin: 0;
-    padding: 0;
-}
-
-
-.main-nav li {
-    flex: 1;
-
-    margin: 0;
-    padding: 0;
-
-    text-align: center;
-
-    border-right: 1px solid #222;
-}
-
-
-.main-nav li:last-child {
-    border-right: none;
-}
-
-
+#navigation, .main-nav { width: 100%; }
+.main-nav { background-color: white; border-bottom: 1px solid var(--pink-border); }
+.main-nav ul { list-style: none; display: flex; align-items: stretch; width: 100%; margin: 0; padding: 0; }
+.main-nav li { flex: 1; margin: 0; padding: 0; text-align: center; border-right: 1px solid var(--pink-border); }
+.main-nav li:last-child { border-right: none; }
 .main-nav a {
     display: block;
-
     width: 100%;
-
     padding: 15px 10px;
     border-bottom: 3px solid transparent;
-
     background-color: white;
-
     color: #222;
-
     text-decoration: none;
-
     font-size: 16px;
     font-weight: 500;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-bottom-color 0.2s ease;
+    transition: background-color .2s ease, color .2s ease, border-bottom-color .2s ease;
 }
-
-
-/* Lighter baby pink when hovering */
-
-.main-nav a:hover {
-    background-color: #fde1ec;
-}
-
-
-/* Current page (accented with light orange) */
-
-.main-nav a.active {
-    font-weight: bold;
-
-    background-color: #fff1e0;
-
-    border-bottom-color: #f4a94c;
-}
-
-
-.main-nav a.active:hover {
-    background-color: #fde1ec;
-}
-
-
-/* =========================
-   MAIN CONTENT LAYOUT
-   ========================= */
-
-.content-layout {
-    display: grid;
-
-    grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width);
-
-    width: 100%;
-
-    min-height: 600px;
-
-    background-color: white;
-}
-
-
-/* =========================
-   LEFT SIDEBAR
-   ========================= */
-
-.left-sidebar {
-    min-width: 0;
-
-    padding: 30px 20px;
-
-    border-right: 1px solid #222;
-
-    background-color: white;
-}
-
-
-.left-sidebar h2,
-.left-sidebar h3 {
-    margin-top: 0;
-
-    color: #d97b29;
-}
-
-
-.left-sidebar ul {
-    list-style: none;
-
-    margin: 0;
-    padding: 0;
-}
-
-
-.left-sidebar li {
-    margin-bottom: 15px;
-}
-
-
-.left-sidebar a {
-    color: #222;
-
-    text-decoration: none;
-
-    overflow-wrap: break-word;
-    word-break: break-word;
-}
-
-
-.left-sidebar a:hover {
-    color: #d97b29;
-
-    text-decoration: underline;
-}
-
-
-/* =========================
-   MAIN CONTENT AREA
-   ========================= */
-
-.main-content {
-    min-width: 0;
-
-    padding: 35px 40px;
-
-    background-color: white;
-}
-
-
-.main-content h1 {
-    margin-top: 0;
-    margin-bottom: 20px;
-
-    padding-left: 14px;
-
-    border-left: 4px solid #f4a94c;
-
-    font-size: 34px;
-}
-
-
-.main-content h2 {
-    margin-top: 30px;
-
-    color: #b85c00;
-}
-
-
-.main-content p {
-    margin-bottom: 18px;
-
-    line-height: 1.6;
-
-    font-size: 16px;
-}
-
-
-/* Inline emphasis for keyword terms (marketing, branding, etc.) */
-
-.keyword {
-    color: #b85c00;
-
-    font-weight: 600;
-}
-
-
-/* =========================
-   HERO IMAGE
-   ========================= */
-
-.hero-image {
-    display: block;
-
-    width: 100%;
-    height: 250px;
-
-    margin-bottom: 30px;
-
-    object-fit: cover;
-
-    border: 1px solid #222;
-}
-
-
-/* =========================
-   RIGHT SIDEBAR
-   ========================= */
-
-.right-sidebar {
-    min-width: 0;
-
-    padding: 30px 20px;
-
-    border-left: 1px solid #222;
-
-    background-color: white;
-}
-
-
-.right-sidebar h2,
-.right-sidebar h3 {
-    margin-top: 0;
-
-    color: #d97b29;
-}
-
-
-.sticky-content {
-    position: sticky;
-
-    top: 20px;
-}
-
-
-.right-sidebar a {
-    color: #222;
-
-    text-decoration: none;
-
-    overflow-wrap: break-word;
-    word-break: break-word;
-}
-
-
-.right-sidebar a:hover {
-    color: #d97b29;
-
-    text-decoration: underline;
-}
-
-
-/* Connect links laid out as a stacked list */
-
-.connect-list {
-    list-style: none;
-
-    margin: 15px 0 0;
-    padding: 0;
-}
-
-
-.connect-list li {
-    margin-bottom: 12px;
-
-    overflow-wrap: break-word;
-    word-break: break-word;
-}
-
-
-/* =========================
-   CONTENT CARDS
-   ========================= */
-
-.content-card {
-    margin: 20px 0;
-    padding: 20px;
-
-    background-color: white;
-
-    border: 1px solid #222;
-}
-
-
-/* =========================
-   BUTTONS
-   Light orange on hover so
-   buttons read differently
-   than nav/link hover states
-   ========================= */
-
-.button,
-button {
-    display: inline-block;
-
-    padding: 10px 18px;
-
-    border: 1px solid #222;
-
-    background-color: white;
-
-    color: #222;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition: background-color 0.2s ease;
-}
-
-
-.button:hover,
-button:hover {
-    background-color: #ffe3c2;
-}
-
-
-/* =========================
-   GENERAL IMAGES
-   ========================= */
-
-img {
-    max-width: 100%;
-}
-
-
-/* =========================
-   FOOTER
-   ========================= */
-
-.site-footer {
-    width: 100%;
-
-    padding: 20px 30px;
-
-    background-color: white;
-
-    border-top: 1px solid #222;
-
-    text-align: center;
-}
-
-
-.site-footer p {
-    margin: 5px 0;
-}
-
-
-.site-footer a {
-    color: #222;
-}
-
-
-.site-footer a:hover {
-    color: #d97b29;
-}
-
-
-/* Footer split into a links row and a contact row */
-
-.footer-row {
-    display: flex;
-    flex-wrap: wrap;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 10px;
-
-    max-width: 900px;
-    margin: 0 auto 8px;
-
-    text-align: left;
-}
-
-
-.footer-links a {
-    margin-right: 14px;
-
-    text-decoration: none;
-}
-
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-
-.footer-contact {
-    text-align: right;
-}
-
-
-.footer-copyright {
-    font-size: 14px;
-
-    color: #555;
-}
-
-
-/* =========================
-   TABLETS
-   ========================= */
+.main-nav a:hover { background-color: var(--pink-light); }
+.main-nav a.active { font-weight: bold; background-color: #fff1f6; border-bottom-color: var(--pink-dark); }
+.main-nav a.active:hover { background-color: var(--pink-light); }
+
+.content-layout { display: grid; grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width); width: 100%; min-height: 600px; background-color: white; }
+.left-sidebar { min-width: 0; padding: 30px 20px; border-right: 1px solid var(--pink-border); background-color: white; }
+.left-sidebar h2, .left-sidebar h3, .right-sidebar h2, .right-sidebar h3 { margin-top: 0; color: var(--pink-dark); }
+.left-sidebar ul { list-style: none; margin: 0; padding: 0; }
+.left-sidebar li { margin-bottom: 15px; }
+.left-sidebar a, .right-sidebar a { color: #222; text-decoration: none; overflow-wrap: break-word; word-break: break-word; }
+.left-sidebar a:hover, .right-sidebar a:hover { color: var(--pink-dark); text-decoration: underline; }
+.main-content { min-width: 0; padding: 35px 40px; background-color: white; }
+.main-content h1 { margin-top: 0; margin-bottom: 20px; padding-left: 14px; border-left: 4px solid var(--pink-dark); font-size: 34px; }
+.main-content h2 { margin-top: 30px; color: var(--pink-dark); }
+.main-content p { margin-bottom: 18px; line-height: 1.6; font-size: 16px; }
+.keyword { color: var(--pink-dark); font-weight: 600; }
+.hero-image { display: block; width: 100%; height: 250px; margin-bottom: 30px; object-fit: cover; border: 1px solid var(--pink-border); }
+.right-sidebar { min-width: 0; padding: 30px 20px; border-left: 1px solid var(--pink-border); background-color: white; }
+.sticky-content { position: sticky; top: 20px; }
+.connect-list { list-style: none; margin: 15px 0 0; padding: 0; }
+.connect-list li { margin-bottom: 12px; overflow-wrap: break-word; word-break: break-word; }
+.content-card { margin: 20px 0; padding: 20px; background-color: white; border: 1px solid var(--pink-border); }
+.button, button { display: inline-block; padding: 10px 18px; border: 1px solid var(--pink-border); background-color: white; color: #222; text-decoration: none; cursor: pointer; transition: background-color .2s ease; }
+.button:hover, button:hover { background-color: var(--pink-light); }
+img { max-width: 100%; }
+.site-footer { width: 100%; padding: 20px 30px; background-color: white; border-top: 1px solid var(--pink-border); text-align: center; }
+.site-footer p { margin: 5px 0; }
+.site-footer a { color: #222; }
+.site-footer a:hover { color: var(--pink-dark); }
+.footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; max-width: 900px; margin: 0 auto 8px; text-align: left; }
+.footer-links a { margin-right: 14px; text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+.footer-contact { text-align: right; }
+.footer-copyright { font-size: 14px; color: #555; }
 
 @media screen and (max-width: 1000px) {
-
-    .site-container {
-        width: 90%;
-    }
-
-
-    .main-content {
-        padding: 30px;
-    }
-
+    .site-container { width: 90%; }
+    .main-content { padding: 30px; }
 }
-
-
-/* =========================
-   MOBILE
-   ========================= */
-
 @media screen and (max-width: 750px) {
-
-    body {
-        background-color: #f8c8dc;
-    }
-
-
-    .site-container {
-        width: 94%;
-    }
-
-
-    .site-header {
-        grid-template-columns: 1fr;
-    }
-
-
-    .logo-area {
-        height: 120px;
-
-        border-right: none;
-
-        border-bottom: 1px solid #222;
-    }
-
-
-    .logo-image {
-        max-width: 250px;
-
-        height: 100px;
-    }
-
-
-    .header-graphic {
-        min-height: 80px;
-    }
-
-
-    .main-nav ul {
-        flex-direction: column;
-    }
-
-
-    .main-nav li {
-        width: 100%;
-
-        border-right: none;
-
-        border-bottom: 1px solid #222;
-    }
-
-
-    .main-nav li:last-child {
-        border-bottom: none;
-    }
-
-
-    .content-layout {
-        grid-template-columns: 1fr;
-    }
-
-
-    .left-sidebar {
-        border-right: none;
-
-        border-bottom: 1px solid #222;
-    }
-
-
-    .main-content {
-        padding: 25px 20px;
-    }
-
-
-    .right-sidebar {
-        border-left: none;
-
-        border-top: 1px solid #222;
-    }
-
-
-    .sticky-content {
-        position: static;
-    }
-
-
-    .hero-image {
-        height: 200px;
-    }
-
-
-    .footer-row {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-
-    .footer-contact {
-        text-align: left;
-    }
-
+    .site-container { width: 94%; }
+    .site-header { grid-template-columns: 1fr; }
+    .logo-area { height: 120px; border-right: none; border-bottom: 1px solid var(--pink-border); }
+    .logo-image { max-width: 250px; height: 100px; }
+    .header-graphic { min-height: 80px; }
+    .main-nav ul { flex-direction: column; }
+    .main-nav li { width: 100%; border-right: none; border-bottom: 1px solid var(--pink-border); }
+    .main-nav li:last-child { border-bottom: none; }
+    .content-layout { grid-template-columns: 1fr; }
+    .left-sidebar { border-right: none; border-bottom: 1px solid var(--pink-border); }
+    .main-content { padding: 25px 20px; }
+    .right-sidebar { border-left: none; border-top: 1px solid var(--pink-border); }
+    .sticky-content { position: static; }
+    .hero-image { height: 200px; }
+    .footer-row { flex-direction: column; align-items: flex-start; }
+    .footer-contact { text-align: left; }
 }
