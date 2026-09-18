@@ -49,10 +49,9 @@ img { max-width: 100%; }
 .footer-contact { text-align: right; }
 .footer-copyright { font-size: 14px; color: #555; }
 
-/* Keep the About Me heading with the copy instead of over the photo. */
+/* Keep the About Me heading in normal document flow so it pushes the copy down. */
 @media screen and (min-width: 481px) {
-    .main-content { position: relative; }
-    .main-content h1 { position: absolute; top: 35px; left: calc(40px + min(38%, 260px) + 28px); right: 40px; margin: 0; }
+    .main-content h1 { position: static; }
     .about-intro { padding-top: 0; }
 }
 @media screen and (max-width: 1000px) { .site-container { width: 90%; } .main-content { padding: 30px; } }
