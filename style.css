@@ -49,12 +49,10 @@ img { max-width: 100%; }
 .footer-contact { text-align: right; }
 .footer-copyright { font-size: 14px; color: #555; }
 
-/* On About Me, keep the title above the body copy on the right of the image. */
+/* Keep the About Me heading in normal document flow so it pushes the copy down. */
 @media screen and (min-width: 481px) {
-    .main-content { position: relative; }
-    .main-content h1 { position: absolute; top: 35px; left: calc(40px + min(38%, 260px) + 28px); right: 40px; margin: 0; z-index: 1; }
-    .about-intro { padding-top: 75px; }
-    .about-image { margin-top: -75px; }
+    .main-content h1 { position: static; }
+    .about-intro { padding-top: 0; }
 }
 @media screen and (max-width: 1000px) { .site-container { width: 90%; } .main-content { padding: 30px; } }
 @media screen and (max-width: 750px) {
@@ -64,8 +62,6 @@ img { max-width: 100%; }
     .content-layout { grid-template-columns: 1fr; }
     .left-sidebar, .right-sidebar { border: none; border-bottom: 1px solid var(--pink-border); }
     .main-content h1 { position: static; margin-bottom: 20px; }
-    .about-intro { padding-top: 0; }
-    .about-image { margin-top: 0; }
 }
 @media screen and (max-width: 480px) {
     .about-image { float: none; display: block; width: 100%; max-width: 260px; margin: 0 auto 20px; }
