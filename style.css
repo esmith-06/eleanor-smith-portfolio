@@ -14,7 +14,7 @@ body { background-color: var(--pink); font-family: 'Poppins', Arial, Helvetica, 
 .main-nav ul { list-style: none; display: flex; align-items: stretch; width: 100%; margin: 0; padding: 0; }
 .main-nav li { flex: 1; margin: 0; padding: 0; text-align: center; border-right: 1px solid var(--pink-border); }
 .main-nav li:last-child { border-right: none; }
-.main-nav a { display: block; width: 100%; padding: 15px 10px; border-bottom: 3px solid transparent; background-color: white; color: #222; text-decoration: none; font-size: 16px; font-weight: 500; transition: background-color .2s ease, color .2s ease, border-bottom-color .2s ease; }
+.main-nav a { display: block; width: 100%; padding: 15px 10px; border-bottom: 3px solid transparent; background-color: white; color: #222; text-decoration: none; font-size: 16px; font-weight: 500; }
 .main-nav a:hover { background-color: var(--pink-light); }
 .main-nav a.active { font-weight: bold; background-color: #fff1f6; border-bottom-color: var(--pink-dark); }
 .content-layout { display: grid; grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width); width: 100%; min-height: 600px; background-color: white; }
@@ -26,7 +26,6 @@ body { background-color: var(--pink); font-family: 'Poppins', Arial, Helvetica, 
 .left-sidebar a:hover, .right-sidebar a:hover { color: var(--pink-dark); text-decoration: underline; }
 .main-content { min-width: 0; padding: 35px 40px; background-color: white; }
 .main-content h1 { margin-top: 0; margin-bottom: 20px; padding-left: 14px; border-left: 4px solid var(--pink-dark); font-size: 34px; }
-.main-content h2 { margin-top: 30px; color: var(--pink-dark); }
 .main-content p { margin-bottom: 18px; line-height: 1.6; font-size: 16px; }
 .keyword { color: var(--pink-dark); font-weight: 600; }
 .about-image { float: left; width: min(38%, 260px); height: auto; aspect-ratio: 3 / 4; object-fit: cover; margin: 0 28px 18px 0; border: 1px solid var(--pink-border); }
@@ -49,6 +48,22 @@ img { max-width: 100%; }
 .footer-links a:hover { text-decoration: underline; }
 .footer-contact { text-align: right; }
 .footer-copyright { font-size: 14px; color: #555; }
+
+/* Keep the About Me heading with the copy instead of over the photo. */
+@media screen and (min-width: 481px) {
+    .main-content { position: relative; }
+    .main-content h1 { position: absolute; top: 35px; left: calc(40px + min(38%, 260px) + 28px); right: 40px; margin: 0; }
+    .about-intro { padding-top: 0; }
+}
 @media screen and (max-width: 1000px) { .site-container { width: 90%; } .main-content { padding: 30px; } }
-@media screen and (max-width: 750px) { .site-container { width: 94%; } .site-header { grid-template-columns: 1fr; } .logo-area { height: 120px; border-right: none; border-bottom: 1px solid var(--pink-border); } .logo-image { max-width: 250px; height: 100px; } .header-graphic { min-height: 80px; } .main-nav ul { flex-direction: column; } .main-nav li { width: 100%; border-right: none; border-bottom: 1px solid var(--pink-border); } .main-nav li:last-child { border-bottom: none; } .content-layout { grid-template-columns: 1fr; } .left-sidebar { border-right: none; border-bottom: 1px solid var(--pink-border); } .main-content { padding: 25px 20px; } .right-sidebar { border-left: none; border-top: 1px solid var(--pink-border); } .sticky-content { position: static; } .hero-image { height: 200px; } .about-image { width: 42%; margin-right: 20px; } .footer-row { flex-direction: column; align-items: flex-start; } .footer-contact { text-align: left; } }
-@media screen and (max-width: 480px) { .about-image { float: none; display: block; width: 100%; max-width: 260px; margin: 0 auto 20px; } }
+@media screen and (max-width: 750px) {
+    .site-container { width: 94%; }
+    .site-header { grid-template-columns: 1fr; }
+    .logo-area { height: 120px; border-right: none; border-bottom: 1px solid var(--pink-border); }
+    .content-layout { grid-template-columns: 1fr; }
+    .left-sidebar, .right-sidebar { border: none; border-bottom: 1px solid var(--pink-border); }
+    .main-content h1 { position: static; margin-bottom: 20px; }
+}
+@media screen and (max-width: 480px) {
+    .about-image { float: none; display: block; width: 100%; max-width: 260px; margin: 0 auto 20px; }
+}
