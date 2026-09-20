@@ -36,6 +36,8 @@ body { background-color: var(--pink); font-family: 'Poppins', Arial, Helvetica, 
 .entrepreneurship-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.5vw, 18px); margin: 26px 0 34px; align-items: start; }
 .entrepreneurship-gallery figure { margin: 0; }
 .entrepreneurship-gallery img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; background-color: transparent; border: 1px solid var(--pink-border); }
+.afterdark-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.5vw, 18px); margin: 26px 0 34px; align-items: start; }
+.afterdark-gallery img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; background-color: transparent; border: 1px solid var(--pink-border); }
 .right-sidebar { min-width: 0; padding: 30px 20px; border-left: 1px solid var(--pink-border); }
 .sticky-content { position: sticky; top: 20px; }
 .connect-list { list-style: none; margin: 15px 0 0; padding: 0; }
@@ -72,6 +74,7 @@ img { max-width: 100%; }
     .main-content h1 { position: static; margin-bottom: 20px; }
     .internship-gallery { grid-template-columns: 1fr; max-width: 620px; margin-left: auto; margin-right: auto; gap: 18px; }
     .entrepreneurship-gallery { grid-template-columns: 1fr; max-width: 620px; margin-left: auto; margin-right: auto; gap: 18px; }
+    .afterdark-gallery { grid-template-columns: 1fr; max-width: 620px; margin-left: auto; margin-right: auto; gap: 18px; }
 }
 @media screen and (max-width: 480px) {
     .about-image { float: none; display: block; width: 100%; max-width: 260px; margin: 0 auto 20px; }
